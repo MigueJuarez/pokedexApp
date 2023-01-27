@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+    <string name="appwidget_text">Pokedex</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="zelda">zelda</string>
+    <string name="pokedex">pokedex</string>
+    <string name="imagendelpokemon">imagenDelPokemon</string>
+</resources>

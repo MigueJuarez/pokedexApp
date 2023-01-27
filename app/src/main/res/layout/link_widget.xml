@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.MyApplication.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MyApplication.AppWidgetContainer">
+
+    <LinearLayout
+        android:layout_width="346dp"
+        android:layout_height="440dp"
+        android:orientation="horizontal"
+        android:background="#00FFFFFF">
+
+        <ImageView
+            android:id="@+id/toad"
+            android:src="@drawable/eevee"
+            app:srcCompat="@drawable/eevee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:layout_weight="1"
+            android:contentDescription="@string/zelda" />
+    </LinearLayout>
+</RelativeLayout>
