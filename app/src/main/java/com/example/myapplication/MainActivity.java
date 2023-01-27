@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
@@ -35,7 +36,7 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Pokemon> pokedex = new ArrayList<>();
+    private final List<Pokemon> pokedex = new ArrayList<>();
     private static Bitmap customPokeImageBitmap;
 
     @Override
@@ -50,10 +51,27 @@ public class MainActivity extends AppCompatActivity {
         configSpinnerListeners();
         configImageViewListeners();
         setBackgroundGradient(BitmapFactory.decodeResource(getResources(), R.drawable.pokedex));
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        Button leftButton = findViewById(R.id.leftButton);
+        leftButton.setOnClickListener(view -> {
+            int previousIndex = spinnerPokemonList.getSelectedItemPosition() - 1;
+            if (previousIndex >= 0){
+                spinnerPokemonList.setSelection(previousIndex);
+            }
+        });
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        Button rightButton = findViewById(R.id.rightButton);
+        rightButton.setOnClickListener(view -> {
+            int previousIndex = spinnerPokemonList.getSelectedItemPosition() + 1;
+            if (previousIndex < pokedex.size()){
+                spinnerPokemonList.setSelection(previousIndex);
+            }
+        });
     }
 
     private void configSpinnerListeners() {
-
         Spinner spinnerPokemonList = findViewById(R.id.spinner);
         ImageView imageViewPokemon = findViewById(R.id.imageViewPokemon);
         ImageView backgroundImageView = findViewById(R.id.background);
